@@ -1,29 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <v-app >
+      <v-main class="app">
+        <HomeViwe/>
+      </v-main>
+
+  </v-app>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
-
-export default Vue.extend({
+<script>
+import HomeViwe from '@/views/HomeView.vue'
+export default {
   name: 'App',
+
+  data: () => ({
+    //
+  }),
   components: {
-    HelloWorld
+    HomeViwe
   }
-});
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.app {
+  height: 100%;
+  background:var(--v-background-site-base);
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+  color: white;
 }
 </style>
+
