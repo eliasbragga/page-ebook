@@ -1,7 +1,7 @@
 <template>
     <v-layout row wrap style="height: 600px; display: flex;" >
         <v-flex md6 class="container_description">
-            <h1>Segredos do primeiro <span >emprego</span></h1>
+            <h1>Segredos do primeiro emprego</h1>
          <h1>como <span class="highlighted_text">Front-end</span></h1>
          <p class="mt-2 container_subtitle">O caminho certo na direção certa</p>
         </v-flex>
@@ -10,26 +10,26 @@
           <div class="card">
             <div class="coupon">
               <span class="span_coupon">Cupon de desconto</span>
-              <span class="text_coupon">AGBSGCPAGAMENOS</span>
+              <span class="text_coupon">
+                AGBSGCPAGAMENOS
+                <v-btn x-small text color="white" ></v-btn>
+              </span>
+             
             </div>
             <div class="text_value">
-              <span>Valor</span>
-              <span>text</span>
+              <span>19,99</span>
             </div>
-            <div class="button">
-              <v-btn>Garantir ebook</v-btn>
+            <div class="buttonEbook">
+              <v-btn color="primary" block height="50">Garantir ebook</v-btn>
             </div>
           </div>
         </v-flex>
     </v-layout>
   </template>
   
-  <script>
+  <script lang="ts">
   export default {
       name:"HomePage",
-      data:() =>({
-  
-      })
   }
   </script>
   
@@ -92,9 +92,28 @@
 .text_coupon {
   font-size:1.4rem;
   font-weight: 500;
+  background: #9ddc33;
+  padding: 1rem;
+  border-radius: 5px;
 }
 
 
+ .text_value {
+ }
+
+ .text_value span {
+  font-size: 11rem;
+  font-weight: bold;
+
+ }
+
+ .buttonEbook button {
+  font-size: 1.3rem;
+ }
+
+ .buttonEbook button:hover {
+  transform: scale(1.1);
+ }
 
  
  

@@ -17,7 +17,7 @@
         <div>
         </div>
         <div class="container__buttons">
-          <button class="btn fourth">Garantir ebook</button>
+          <button :class="isFlag ? 'fourth' : 'noHover'"  class="btn" @pointerout="desactiveFlag" @click="activeFlag">Garantir ebook</button>
           <!-- <v-btn block small>Comprar</v-btn> -->
         </div>
       </div>
@@ -36,13 +36,15 @@ import { routes } from "@/router/index";
 
 interface Data {
   routes: Array<any>,
-    name: string
+    name: string,
+    isFlag: boolean
 }
 export default Vue.extend({
   data(): Data {
     return {
       routes: [],
-      name: 'Elias'
+      name: 'Elias',
+      isFlag:false
       // Inicialize as variáveis com seus valores e tipos
     };
   },
@@ -55,6 +57,12 @@ export default Vue.extend({
         this.$router.push(route);
       }
     },
+    activeFlag(): void {
+      this.isFlag = true
+    },
+    desactiveFlag():void {
+      this.isFlag = false
+    }
   },
 });
 </script>
@@ -138,6 +146,17 @@ header {
   outline: 0;
 }
 
+.noHover {
+  border-color: #c8ff78;
+  color: #ffffffcb;
+  background-image: -webkit-linear-gradient(45deg, transparent 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #c8ff78 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background .3s ease-in-out;
+}
+
 .fourth {
   border-color: #c8ff78;
   color: #ffffffcb;
@@ -152,4 +171,6 @@ header {
   color: black;
   background-position: 0;
 }
+
+
 </style>
